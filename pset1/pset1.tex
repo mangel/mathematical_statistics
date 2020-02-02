@@ -55,10 +55,16 @@ $$\Omega = P \times F$$
 
 \paragraph{3} Proponga un espacio muestral para el experimento aleatorio de lanzar tres monedas a un mismo tiempo, suponiendo que las monedas:
 \paragraph{a} Son distinguibles, es decir, puede por ejemplo ser de colores distintos.
-\paragraph{Respuesta.} En este caso tenemos que las monedas son de tres colores distintos que denotaremos como $c_1, c_2, c_3$ y pertenecen al conjunto $C$, por otra parte, los resultados que pueden tener alguna de estas monedas puede ser cara o sello, por lo que los asociamos como elementos del conjunto $R$. De modo que el espacio muestral se define como el producto cruz entre estos dos conjuntos:
-$$\Omega = C \times R$$
+\paragraph{Respuesta.} En este caso tenemos que las monedas son de tres colores distintos que denotaremos como $c_1, c_2, c_3$ y pertenecen al conjunto $C$, por otra parte, los resultados que pueden tener alguna de estas monedas puede ser cara o sello, por lo que los asociamos como elementos del conjunto $R$. De modo que el espacio muestral se define como el producto cartesiano entre estos dos conjuntos:
+$$\Omega = C \times R,$$
+Y su tamaño por ende será $3 \times 2 = 6$ elementos.
 \paragraph{b}No son distinguibles, es decir, físicamente son idénticas.
-\paragraph{Respuesta.} En este caso el resultado \textit{cara, sello, sello} es equivalente al resultado \textit{sello, sello, cara}, el espacio muestral luego se reduce en su cantidad de elementos por lo que definiremos como el producto cartesiano entre los representantes de cada uno de
+\paragraph{Respuesta.} En este caso el resultado \textit{cara, sello, sello} es equivalente al resultado \textit{sello, sello, cara}, es decir, por cada jugada realizada se pueden encontrar otras equivalentes (que no importa el orden) combinando los elementos, vemos por tanto que el número de combinaciones es $3!$ por el siguiente argumento. Suponga que se tiene la jugada $(C,S,S)$ y que esta representa el evento \text{cara, sello, sello}, el problema se reduce a determinar el número de formas en que se pueden organizar los elementos de esta jugada, luego, para la primera posición tenemos 3 opciones, para la segunda 2 y restante solo queda con una opción, por ende la fórmula que determina el número de combinaciones es $3\times2\times1 = 3!$.
+\paragraph{}Continuando con la construcción de $\Omega$, organizaremos en conjuntos $R_i$ a los resultados que corresponden a una misma jugada y al conjunto representante lo denotaremos como ${R_i}^r$, por ende el espacio muestral se denota como la unión de todos los representantes de todos los conjuntos que se pueden construir:
+
+$$\Omega = {R_1}^r \cup {R_2}^r \cup {R_3}^r \cup \dots \cup {R_j}^r.$$
+
+Ahora inspeccionando con detalle la cantidad de los conjuntos $R_j$ calcularemos el tamaño de $\Omega$, partimos de su construcción, teniendo en cuenta que no nos interesa la posición de las monedas; para cada una de las tres monedas únicamente pueden haber dos resultados, luego la cantidad de combinaciones viene dada por la ecuación $2 x 2 x 2 = 2^3 = 8$, es decir hay exactamente $8$ elementos en el espacio muestral.
 
 \paragraph{4} Considere el experimento aleatorio de lanzar dos dados distinguibles. Escriba explícitamente los resultados asociados a los siguientes eventos y determine su cardinalidad.
 \paragraph{a} $A = \text{'La suma de los dos resultados es 7'}$.
