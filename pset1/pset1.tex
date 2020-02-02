@@ -15,25 +15,51 @@
 	\maketitle
 \paragraph{1} Clasifique los siguientes experimentos en deterministas o aleatorios. Si es necesario, añada hipótesis o condiciones adicionales para justificar su respuesta.
 \paragraph{a} Registrar el número de accidentes que ocurren en una determinada calle de una ciudad.
+\paragraph{Estocástico.} El patrón que determina si van a ocurrir accidentes en una calle no es posible definirlo con una precisión matemática en el 100$\%$ de los casos, siempre hay una aleatoridad en la ocurrencia de los sucesos.
 \paragraph{b} Observar la temperatura a la que hierve el agua a una altitud dada.
+\paragraph{Determinista.} El punto al que hierve el agua depende de la presión y de la temperatura ambiente, en general, estas condiciones no son aleatorias y su medición es posible. De modo que al repetir el experimento con las mismas condiciones, se puede determinar el punto en el que el agua se evapora.
 \paragraph{c} Registrar el consumo de electricidad de una casa-habitación en un día determinado.
+\paragraph{Determinista.} Teniendo los instrumentos de medida es posible registrar el consumo de energía en una casa-habitación, sin embargo predecirlo tiene un nivel de aleatoreidad, dado que el su uso depende de factores aleatorios en este caso diríamos que es estocástico.
 \paragraph{d}Registrar la hora a la que desaparece el sol en el horizonte en un día dado, visto desde una posición geográfica determinada.
+\paragraph{Determinista.} Dependiendo del lugar que se encuentre una persona en el planeta y respecto a la posición en el que el horizonte se encuentra respecto al sol, es posible predecir en qué momento se dará la puesta de sol en un lugar.
 \paragraph{e} Observar el precio que tendrá el petróleo dentro de un año.
+\paragraph{Estocástico.} El precio de un activo (como el petróleo) varía en función de lo que pasa en el mercado, pero el mercado varía en función de lo que ocurre en diferentes lugares del mundo, que en gran medida son aleatorias. Por ello la predicción del precio del petróleo es un experimento estocástico.
 \paragraph{f} Registrar la altura máxima que alcanza un proyectil lanzado verticalmente.
+\paragraph{Determinista.} La altura que alcanza un proyectil, depende de la gravedad y el ángulo de disparo. \textit{Suponiendo que es el disparo de un revólver en la tierra}.
 \paragraph{g} Observar el número de años que vivirá un bebé que nace en este momento.
+\paragraph{Estocástico.} El tiempo de vida de una persona depende no sólo del tiempo sino de un número indeterminado de condiciones y hábitos, que no necesariamente dependen del momento del nacimiento.
 \paragraph{h} Observar el ángulo de reflexión de un haz de luz incidente en un espejo.
+\paragraph{Determinista.} En general, es permendicular al angulo de indicencia del haz de luz, sin embargo también de pende del indice de refracción del material, ambos son posibles de medir.
 \paragraph{i} Registrar la precipitación pluvial anual en una zona geográfica determinada.
+\paragraph{Estocástico.} Ya existen herramientas para determinar la cantidad de precipitación en un momento, pero predecir el clima es definitivamente un modelo estocástico, la cantidad de variables que hacen que en un lugar llueva dependen de los cambios en todo el planeta tierra y las condiciones del lugar en particular.
 \paragraph{j} Observar el tiempo que tarda un objeto en caer al suelo cuando se le deja caer desde una altura dada.
-
+\paragraph{Determinista.} \textit{Suponiendo que es la caída de una masa en la tierra y que únicamente tenemos en cuenta condiciones ideales (la gravedad es constante, estaba en reposo y demás)}. Denotamos a $x_0 = 0$, a $x$ como la altura desde la que se esta dejando caer la masa y a $v$ como la velocidad inicial de la masa, se despeja el valor del tiempo de la ecuación:
+$$x = x_0 + vt + \frac{1}{2}at^2$$
+y se tiene que para las condiciones mencionadas el tiempo se obtiene mediante la siguiente ecuación:
+$$t = \sqrt{\frac{2x}{a}}$$
 \paragraph{2} Determine un espacio muestral para el experimento aleatorio consistente en:
 \paragraph{a} Lanzar un dado hasta que se obtiene un "6".
+\paragraph{Respuesta.}
+$$\Omega = \{ \{1\}, \{2\}, \{3\}, \{4\}, \{5\}, \{6\} \}$$
+$$E = \{\{6\}\}$$
 \paragraph{b} Registrar la fecha de cumpleaños de n personas escogidas al azar.
+\paragraph{Respuesta.}
+$$\Omega = \{ \text{todos los días del año incluyendo el bisiesto}\}$$
 \paragraph{c} Observar la forma en la que r personas que abordan un elevador en la planta baja de un edificio descienden en los pisos $1, 2, \dots, n$.
+\paragraph{Respuesta.} Decimos que $p_1, p_2, p_3, \dots, p_n$ son las personas y su cantidad es $n$, y decimos que $f_1, f_2, f_3, \dots, f_r$ son los $r$ pisos del edificio, definimos a $\Omega$ como el producto cartesiano entre el conjunto de personas ($P$) por el conjunto de pisos($F$), limitando asi la cantidad de elementos del espacio muestral como $nr$.
+$$\Omega = P \times F$$
 \paragraph{d} Registrar la duración de una llamada telefónica escogida al azar.
+\paragraph{Respuesta.} El tiempo de duración de una llamada no tiene un límite establecido, al igual que la cantidad de llamadas que se puede realizar, por ello definiremos
 \paragraph{e} Observar el número de años que le restan de vida a una persona escogida al azar dentro del conjunto de asegurados de una compañía aseguradora.
+\paragraph{Respuesta.} Definiremos como $S$ al conjunto de personas que tiene una compañía aseguradora y este es finito y definiremos a $f(x)$ la función que determina el número de años que le restan de vida a una persona.
+
 \paragraph{3} Proponga un espacio muestral para el experimento aleatorio de lanzar tres monedas a un mismo tiempo, suponiendo que las monedas:
 \paragraph{a} Son distinguibles, es decir, puede por ejemplo ser de colores distintos.
+\paragraph{Respuesta.} En este caso tenemos que las monedas son de tres colores distintos que denotaremos como $c_1, c_2, c_3$ y pertenecen al conjunto $C$, por otra parte, los resultados que pueden tener alguna de estas monedas puede ser cara o sello, por lo que los asociamos como elementos del conjunto $R$. De modo que el espacio muestral se define como el producto cruz entre estos dos conjuntos:
+$$\Omega = C \times R$$
 \paragraph{b}No son distinguibles, es decir, físicamente son idénticas.
+\paragraph{Respuesta.} En este caso el resultado \textit{cara, sello, sello} es equivalente al resultado \textit{sello, sello, cara}, el espacio muestral luego se reduce en su cantidad de elementos por lo que definiremos como el producto cartesiano entre los representantes de cada uno de
+
 \paragraph{4} Considere el experimento aleatorio de lanzar dos dados distinguibles. Escriba explícitamente los resultados asociados a los siguientes eventos y determine su cardinalidad.
 \paragraph{a} $A = \text{'La suma de los dos resultados es 7'}$.
 \paragraph{b} $B = \text{'Uno de los dos dados cae un número impar y el otro en un número par'}$.
