@@ -3,9 +3,9 @@
 \usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish, mexico]{babel}
-
 \usepackage[margin=0.5in]{geometry}
 
 \title{Taller 1}
@@ -36,42 +36,84 @@
 \paragraph{Determinista.} \textit{Suponiendo que es la caída de una masa en la tierra y que únicamente tenemos en cuenta condiciones ideales (la gravedad es constante, estaba en reposo y demás)}. Denotamos a $x_0 = 0$, a $x$ como la altura desde la que se esta dejando caer la masa y a $v$ como la velocidad inicial de la masa, se despeja el valor del tiempo de la ecuación:
 $$x = x_0 + vt + \frac{1}{2}at^2$$
 y se tiene que para las condiciones mencionadas el tiempo se obtiene mediante la siguiente ecuación:
-$$t = \sqrt{\frac{2x}{a}}$$
+$$t = \sqrt{\frac{2x}{a}}.$$
 \paragraph{2} Determine un espacio muestral para el experimento aleatorio consistente en:
 \paragraph{a} Lanzar un dado hasta que se obtiene un "6".
-\paragraph{Respuesta.}
-$$\Omega = \{ \{1\}, \{2\}, \{3\}, \{4\}, \{5\}, \{6\} \}$$
-$$E = \{\{6\}\}$$
+\paragraph{Respuesta.} En este caso el espacio muestral es infinito y se define como
+$$\Omega = \{ 6, \{(1,6), (2,6), (3,6), \dots, (5,6)\}, \{ (1,1,6), (1,2,6), \dots \}, \dots
+\}$$
 \paragraph{b} Registrar la fecha de cumpleaños de n personas escogidas al azar.
 \paragraph{Respuesta.}
-$$\Omega = \{ \text{todos los días del año incluyendo el bisiesto}\}$$
+\begin{align*}
+    \Omega = \{ &(p_1, p_2, p_3, \dots, p_{f}, \dots, p_{f_{max}}),\\
+                &(p'_1, p'_2, p'_3, \dots, p'_{f} \dots, p_{f_{max}}),\\
+                &\dots,\\
+              &\}.
+\end{align*}
+En donde cada elemento del conjunto es una combinación única de las $p_f \in \mathbb{N}$ personas en la $f$ fecha de cumpleaños, $f_{max}$ es la fecha máxima y además se satisface que la sumatoria de los elementos del la combinación debe ser igual a $n$.
 \paragraph{c} Observar la forma en la que r personas que abordan un elevador en la planta baja de un edificio descienden en los pisos $1, 2, \dots, n$.
-\paragraph{Respuesta.} Decimos que $p_1, p_2, p_3, \dots, p_n$ son las personas y su cantidad es $n$, y decimos que $f_1, f_2, f_3, \dots, f_r$ son los $r$ pisos del edificio, definimos a $\Omega$ como el producto cartesiano entre el conjunto de personas ($P$) por el conjunto de pisos($F$), limitando asi la cantidad de elementos del espacio muestral como $nr$.
-$$\Omega = P \times F$$
+\paragraph{Respuesta.} Como en el ejercicio anterior, cada elemento representa una combinación única del numero de personas $p_f$ entre los $n$ pisos, procedemos de la misma manera, por ende
+\begin{align*}
+    \Omega = \{ &(p_1, p_2, p_3, \dots, p_{f}, \dots, p_{f_n}),\\
+                &(p'_1, p'_2, p'_3, \dots, p'_{f} \dots, p_{f_n}),\\
+                &\dots,\\
+              &\}.
+\end{align*}
+nótese la leve diferencia de que en este caso una combinación tiene a lo sumo $n$ componentes. Adicionalmente se debe satisfacer que la sumatoria de de los componentes de cada elemento $p_f$ deber ser igual a $r$.
 \paragraph{d} Registrar la duración de una llamada telefónica escogida al azar.
-\paragraph{Respuesta.} El tiempo de duración de una llamada no tiene un límite establecido, al igual que la cantidad de llamadas que se puede realizar, por ello definiremos
+\paragraph{Respuesta.} El tiempo de duración de una llamada no tiene un límite establecido, por ello definimos:
+$$\Omega = \{ x \in \mathbb{R} : x > 0 \}$$
 \paragraph{e} Observar el número de años que le restan de vida a una persona escogida al azar dentro del conjunto de asegurados de una compañía aseguradora.
-\paragraph{Respuesta.} Definiremos como $S$ al conjunto de personas que tiene una compañía aseguradora y este es finito y definiremos a $f(x)$ la función que determina el número de años que le restan de vida a una persona.
-
+\paragraph{Respuesta.} Los años de vida que le restan a una persona (en general) no son conocidos, por ende no tienen límite, por ende definiremos:
+$$\Omega = \{ x \in \mathbb{R}:x \geq 0 \}$$
+nótese que es mayor a cero, porque pueden existir personas dentro de los asegurados que ya no les restan años de vida y por ende tienen $0$ años de vida.
 \paragraph{3} Proponga un espacio muestral para el experimento aleatorio de lanzar tres monedas a un mismo tiempo, suponiendo que las monedas:
 \paragraph{a} Son distinguibles, es decir, puede por ejemplo ser de colores distintos.
-\paragraph{Respuesta.} En este caso tenemos que las monedas son de tres colores distintos que denotaremos como $c_1, c_2, c_3$ y pertenecen al conjunto $C$, por otra parte, los resultados que pueden tener alguna de estas monedas puede ser cara o sello, por lo que los asociamos como elementos del conjunto $R$. De modo que el espacio muestral se define como el producto cartesiano entre estos dos conjuntos:
-$$\Omega = C \times R,$$
-Y su tamaño por ende será $3 \times 2 = 6$ elementos.
+\paragraph{Respuesta.} En este caso tenemos que las monedas son de tres colores distintos por lo que diremos que A, B, C, son los colores y $A_c$ implica que la moneda A obtuvo como resultado cara y $A_s$ obtuvo sello, luego construiremos el conjunto como
+
+$$\Omega = \{(A_c, B_c, C_c), (A_c, B_s, C_c), (A_c, B_s, C_s), (A_s, B_c, C_c), \dots, (A_n, B_n, C_n)\}$$
 \paragraph{b}No son distinguibles, es decir, físicamente son idénticas.
-\paragraph{Respuesta.} En este caso el resultado \textit{cara, sello, sello} es equivalente al resultado \textit{sello, sello, cara}, es decir, por cada jugada realizada se pueden encontrar otras equivalentes (que no importa el orden) combinando los elementos, vemos por tanto que el número de combinaciones es $3!$ por el siguiente argumento. Suponga que se tiene la jugada $(C,S,S)$ y que esta representa el evento \text{cara, sello, sello}, el problema se reduce a determinar el número de formas en que se pueden organizar los elementos de esta jugada, luego, para la primera posición tenemos 3 opciones, para la segunda 2 y restante solo queda con una opción, por ende la fórmula que determina el número de combinaciones es $3\times2\times1 = 3!$.
-\paragraph{}Continuando con la construcción de $\Omega$, organizaremos en conjuntos $R_i$ a los resultados que corresponden a una misma jugada y al conjunto representante lo denotaremos como ${R_i}^r$, por ende el espacio muestral se denota como la unión de todos los representantes de todos los conjuntos que se pueden construir:
-
-$$\Omega = {R_1}^r \cup {R_2}^r \cup {R_3}^r \cup \dots \cup {R_j}^r.$$
-
-Ahora inspeccionando con detalle la cantidad de los conjuntos $R_j$ calcularemos el tamaño de $\Omega$, partimos de su construcción, teniendo en cuenta que no nos interesa la posición de las monedas; para cada una de las tres monedas únicamente pueden haber dos resultados, luego la cantidad de combinaciones viene dada por la ecuación $2 x 2 x 2 = 2^3 = 8$, es decir hay exactamente $8$ elementos en el espacio muestral.
-
+\paragraph{Respuesta.} En este caso el resultado \textit{cara, sello, sello} es equivalente al resultado \textit{sello, sello, cara}, es decir, por cada jugada realizada se pueden encontrar otras equivalentes (que no importa el orden) combinando los elementos, es decir corresponde al conjunto:
+$$\Omega = \{ (C,C,C), (C,C,S), (C,S,S), (S,S,S) \}$$
 \paragraph{4} Considere el experimento aleatorio de lanzar dos dados distinguibles. Escriba explícitamente los resultados asociados a los siguientes eventos y determine su cardinalidad.
 \paragraph{a} $A = \text{'La suma de los dos resultados es 7'}$.
+\paragraph{Respuesta.} $A = \{ (1,6), (2,5), (3,4), (5,2), (6,1) \}.$ Cardinalidad $5$.
 \paragraph{b} $B = \text{'Uno de los dos dados cae un número impar y el otro en un número par'}$.
+\paragraph{Respuesta.}
+\begin{align*}
+    B = \{ &(1,2), (3,2), (5,2), (2,1), (2,3), (2,5),\\
+           &(1,4), (3,4), (5,4), (4,1), (4,3), (4,5),\\
+           &(1,6), (3,6), (5,6), (6,1), (6,3), (6,5) \}.
+\end{align*}
+\paragraph{} Cardinalidad $18$
 \paragraph{c} $C = \text{'El resultado de un dado difiere del otro en, a lo sumo, una unidad'}$.
+\paragraph{Respuesta}.
+\begin{align*}
+    C = \{ &(1,2), (2,3), (3,4), (4,5), (5,6), (6,1),\\
+           &(2,1), (3,2), (4,3), (5,4), (6,5), (1,6)\}.
+\end{align*}
+\paragraph{} Cardinalidad $12$.
 \paragraph{d} $D = \text{'El resultado de un dado difiere del otro en por lo menos cuatro unidades'}$.
+\paragraph{Respuesta.} $D = \{ (1,5), (2,6), (5,1), (6,2) \}.$ Cardinalidad $4$
 \paragraph{e} $E = A \cap B$.
+\paragraph{Respuesta.}
+\begin{align*}
+    E = \{ &(1,1), (2,3), (3,4), (4,5), (5,6),\\
+           &(2,1), (3,2), (4,3), (5,4), (6,5) \}.
+\end{align*}
+\paragraph{} Cardinalidad $10$
 \paragraph{f} $F = B^{c}$.
+\begin{align*}
+    F = \{ &(1,1), (1,3), (1,5),\\
+           &(2,2), (2,4), (2,6),\\
+           &(3,3), (3,1), (3,5),\\
+           &(4,4), (4,2), (4,6),\\
+           &(5,5), (5,1), (5,3),\\
+           &(6,6), (6,2), (6,4) \}.
+\end{align*}
+\paragraph{} cardinalidad $12$
 \paragraph{e} $G = C \cup B$.
+\paragraph{Respuesta.}
+$$G=\{(1,2), (2,3), (3,4), (4,5), (5,6), (2,1), (3,2), (4,3), (5,4), (6,5) \}$$
+\paragraph{} Cardinalidad $10$.
 \end{document}
