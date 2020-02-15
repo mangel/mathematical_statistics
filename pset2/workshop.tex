@@ -1,0 +1,80 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amssymb, amsmath}
+\usepackage[document]{ragged2e}
+\usepackage[utf8]{inputenc}
+\usepackage{cancel}
+\usepackage{graphicx}
+\usepackage{enumerate} 
+\usepackage{amsfonts}
+\usepackage{bbding}
+\usepackage[spanish, mexico]{babel}
+\begin{document}
+\begin{center}
+    \textbf {Facultad de Matemáticas e Ingenierías}
+    
+    \textbf {Estadística Matemática}
+    
+    \textbf {Estudiantes: Glenn Nicolás Rico Linares (código: 614162014) y Miguel Angel Gómez Barrera (código: 614171001) }
+    
+    \textbf {Grupo 51}
+    
+    \textbf {Taller 2.}
+    
+\end{center}
+%-------------------------------------------------
+\begin{center}\rule{1\textwidth}{0.1mm} \end{center}
+\textbf{1.} \par
+Sea $f$ una $\sigma$-álgebra de subconjuntos de $\Omega$. Demuestre que la colección
+\[
+    f^{c} = \{F^{c}: F \in f  \},
+\]
+es una $\sigma$-álgebra. Compruebe además que $f^{c} = F$.
+\par
+\paragraph{Solución:}
+\begin{enumerate}[$i)$]
+    \item Por hipótesis sabemos que $f$ es una $\sigma$-álgebra, entonces $\Omega \in f$ y por lo tanto $ \varnothing \in f^{c}$.
+    \item Como $f$ es $\sigma$-álgebra, $\varnothing^c \in f$ y por ende $\varnothing^c \in f^c$, que es equivalente a que $\Omega \in f^c$.
+    \item Sean $A_{1}, A_{2}, \dots  \in f$, por el teorema demostrado en $3.$ y por inducción sobre $3.$, podemos inferir que $\displaystyle\bigcap_{i= i}^{\infty} A_{i} \in f $, como $\displaystyle\bigcap_{i = 1}^{\infty} A_{i} \in f$, entonces $\left ( \displaystyle\bigcap_{i = 1}^{\infty} A_{i}\right)^{c} \in f_{c}$, por definición de leyes de D'morgan decimos que $\left(\displaystyle\bigcap_{i = 1}^{\infty} A_{i}\right)^{c} = (A_{1})^{c} \cup (A_{2})^{c}\cup  \dots \in f^{c}$, pero $(A_{1})^{c} \cup (A_{2})^{c}\cup \dots = \displaystyle\bigcup_{i=1}^{\infty} A_{i}^{c}$, por lo tanto $\displaystyle\bigcup_{i=1}^{\infty} A_{i}^{c} \in f^{c}$.
+\end{enumerate}
+$\blacksquare$
+%-------------------------------------------------
+ \begin{center}\rule{1\textwidth}{0.1mm} \end{center}
+\textbf{2.} \par
+Sea $f$ una $\sigma$-álgebra de subconjuntos de $\Omega$ y sea $A$ un elemento de $f$. Demuestre que la siguiente colección es una $\sigma$-álgebra de subconjuntos de $A$,
+\[
+F_{A} = A \cap f = \{ A \cap f: F \in f\}.
+\]
+\par
+\textbf{Solución:}
+\paragraph{}Como $A \in f$, por la definición del conjunto $F_A$, $A \in A \cap f$ porque $A \in f$, por ende $A \in F_A$ y satisface el axioma de pertenencia del universo (en este caso $A$). Nótese que $A^c \not{\in} A$ y por ende $A \cap A^c = \varnothing \in f$ dado que $f$ es una $\sigma$-álgebra y por ende $\varnothing \in F_A$, vemos que $F_A = \{\varnothing, A\}$ y por ende los axiomas de complemento y unión arbitraria se satisfacen. Por lo tanto $F_A$ es una $\sigma$-álgebra de $A$. $\blacksquare$
+%-------------------------------------------------
+\begin{center}\rule{1\textwidth}{0.1mm} \end{center}
+\textbf{3.} \par
+Sean $f_{1}$ y $f_{2}$ dos $\sigma$-álgebra de subconjuntos de $\Omega$. Demuestre que $f_{1} \cap f_{2}$ es una $\sigma$-álgebra de subconjuntos de $\Omega$.\\
+\par
+\paragraph{Solución:}
+Sean $f_{1}$ y $f_{2}$ dos $\sigma$-álgebra de subconjuntos de $\Omega$. 
+\begin{enumerate}[$i)$]
+    \item Como $f_{1}$ y $f_{2}$ son $\sigma$-álgebras entonces $\Omega \in f_{1}$ y $\Omega \in f_{2}$, por lo tanto $\Omega \in f_{1} \cap f_{2}$.
+    \item Sea A un elemento en $f_{1} \cap f_{2}$, entonces $A \in f_{1}$ y $A \in f_{2}$ por lo tanto $A^{c} \in f_{1}$ y $A^{c} \in f_{2}$ es decir que $A^{c} \in f_{1} \cap f_{2}$.
+    \item Sean $A_{1}, A_{2}, \dots $ elementos de $f_{1} \cap f_{2}$, entonces $A_{1}, A_{2}, \dots \in f_{1}$ y $A_{1},A_{2}, \dots \in f_{2}$, por lo tanto $\displaystyle\bigcup_{n=1}^{\infty} A_{n} \in f_{1}$ y $ \displaystyle\bigcup_{n=1}^{\infty} A_{n} \in f_{2}$ por lo cual $\displaystyle\bigcup_{n=1}^{\infty} A_{n} \in f_{1} \cap f_{2}$. 
+\end{enumerate}
+$\blacksquare$
+%------------------------------------------------
+\begin{center}\rule{1\textwidth}{0.1mm} \end{center}
+\textbf{4.} \par 
+Sean $f_{1}$ y $f_{2}$ dos $\sigma$-álgebras de subconjuntos de $\Omega$. Demuestre que $f_{1} \cup f_{2}$ no necesariamente es una $\sigma$-álgebra. 
+\\Sugerencia: Considere el espacio $\Omega = \{1, 2, 3\}$ y $f_{1} = \{\varnothing, \{1\}, \{2, 3\}, \Omega \}$ y $f_{2} = \{\varnothing, \{1, 2\}, \{3\}, \Omega \}$.\\
+\par
+\paragraph{Solución:}
+Sean $F_1$ y $F_2$ dos $\sigma-$ álgebra de subconjuntos de $\Omega$, tal que
+$$ \Omega = \{1, 2, 3\} \; \; \; \; \; \;  f_{1} = \{\varnothing, \{1\}, \{2, 3\}, \Omega \} \; \; \; \; \; \; f_{2} = \{\varnothing, \{1, 2\}, \{3\}, \Omega \}.$$
+\begin{enumerate}[$i)$]
+    \item Sea $\Omega \in F_1$ y $\Omega \in F_2$, entonces $\Omega \in F_1 \cup F_2$.
+    \item Sea $A$ un elemento  que pertenece a $F_1 \cup F_2$, como $A\in F_1$ y $A\in F_2$ también $A^c \in F_1$ y $A^c \in F_2$, entonces $A^c \in (F_1 \cup F_2)$.
+    \item Sea $F_1 \cup F_2= \{\varnothing, \{1\}, \{3\}, \{1,2\}, \{2,3\}, \Omega \}$.\\
+    Al unir elementos de $F_1 \cup F_2$  arbitrariamente, tendríamos el elemento $\{1,3\}$, pero $\{1,3\} \not\in (F_1 \cup F_2)$
+\end{enumerate}
+Por lo tanto $F_1 \cup F_2$ no necesariamente es una $\sigma-$ álgebra. $\blacksquare$
+\end{document}
